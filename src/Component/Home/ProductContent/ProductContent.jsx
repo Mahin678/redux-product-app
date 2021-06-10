@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import redux element
 import { useSelector } from "react-redux";
 // import ProductCart
 import ProductCart from "../../Utilities/ProductCart/ProductCart";
+// import use cookies
+import { useCookies } from "react-cookie";
 
 const ProductContent = () => {
   const ProductData = useSelector((state) => state.ProductReducer);
-
+  const [cookies, setCookie] = useCookies(["user"]);
+  // console.log(ProductData);
+  // useEffect(() => {
+  //   setCookie("user", ProductData, {
+  //     path: "/",
+  //   });
+  // }, [ProductData]);
+  // console.log(cookies.user);
   return (
     <div>
       <div className="container">

@@ -6,7 +6,6 @@ const index = (props) => {
   return (
     <div>
       <Header />
-
       {props.children}
       <Footer />
     </div>

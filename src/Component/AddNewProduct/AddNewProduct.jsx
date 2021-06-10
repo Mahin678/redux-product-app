@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 // react hook form import
 import { useForm } from "react-hook-form";
 //  redux element import
@@ -6,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { productCreate } from "../../Redux/Action/ProductAction";
 // import layout
 import Layout from "../Layout/index";
-
+// coockies add
 const AddNewProduct = () => {
   const {
     register,
@@ -41,6 +42,9 @@ const AddNewProduct = () => {
       setProductAdded(true);
       setProductError(false);
       dispatch(productCreate(info));
+      // setCookie("user", info, {
+      //   path: "/",
+      // });
     } else {
       setProductError(true);
     }

@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 // import redux element
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../Redux/Action/ProductAction";
 // import Layout and productCart
 import Layout from "../Layout/index";
 import ProductCart from "../Utilities/ProductCart/ProductCart";
 
 const AddToCart = () => {
   const selector = useSelector((state) => state.ProductCheckout);
+  const dispatch = useDispatch();
   const [checkoutDone, setCheckoutDone] = useState(false);
   const data = selector || [];
+  const handleCheckoutDone = () => {
+    setCheckoutDone(!checkoutDone);
+  };
 
   return (
     <div>
@@ -17,7 +22,7 @@ const AddToCart = () => {
           <div className="container text-center">
             {data.length ? (
               <button
-                onClick={() => setCheckoutDone(!checkoutDone)}
+                onClick={() => handleCheckoutDone()}
                 className="btn btn-success mx-auto text-center my-3 w-50"
               >
                 {" "}

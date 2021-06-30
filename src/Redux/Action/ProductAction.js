@@ -1,4 +1,12 @@
 import * as Type from "./Type";
+const axios = require('axios');
+export const postView = () => async dispatch => {
+  const post = await axios.get('https://jsonplaceholder.typicode.com/posts');
+   dispatch({type: Type.VIEW_POST, payload:post});
+   console.log(post);
+ return post;
+} 
+
 export const productCreate = (data) => (dispatch) => {
   dispatch({ type: Type.PRODUCT_CREATE, payload: data });
 };

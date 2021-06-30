@@ -7,12 +7,13 @@ import Home from "./Component/Home";
 import AddToCart from "./Component/AddToCart/AddToCart";
 import AddNewProduct from "./Component/AddNewProduct/AddNewProduct";
 import UpdateProduct from "./Component/UpdateProduct/UpdateProduct";
+import Test from "./Test/Test";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/update-product">
+        {/* <Route path="/update-product">
           <UpdateProduct />
         </Route>
         <Route path="/create-product">
@@ -20,12 +21,15 @@ function App() {
         </Route>
         <Route path="/add-to-cart">
           <AddToCart />
-        </Route>
+        </Route> */}
         <Route path="/home">
-          <Home />
+        <Test/>
+        </Route>
+        <Route path="/test">
+          <Test/>
         </Route>
         <Route exact path="/">
-          <Home />
+        <Test/>
         </Route>
       </Switch>
     </Router>
